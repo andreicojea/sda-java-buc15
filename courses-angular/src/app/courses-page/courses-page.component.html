@@ -1,0 +1,4 @@
+<h2>Courses</h2>
+<div class="course-list">
+  <app-course-card *ngFor="let c of courses" [course]="c" (click)="goToCourseDetails(c)"></app-course-card>
+</div>

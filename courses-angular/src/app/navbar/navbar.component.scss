@@ -1,0 +1,32 @@
+.navbar {
+  background: #3044ad;
+  color: white;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* padding-left: 20px;
+  padding-right: 20px; */
+  padding: 0 20px;
+
+  a {
+    display: inline-block;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-left: 4px;
+    &:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+    &.active {
+      background: white;
+      color: black;
+    }
+  }
+}
+
+.navbar-title {
+  margin: 0;
+  font-size: 20px;
+}

@@ -1,0 +1,17 @@
+<!-- if (course !== null) {
+  // afiseaza div + copii
+} -->
+<button routerLink="/courses">Back</button>
+<!-- <button (click)="goBack()">Back</button> -->
+
+<div *ngIf="course">
+  <img [src]="course?.cover">
+  <h2>{{course?.title}}</h2>
+  <p>Instructor: {{course?.author}}</p>
+</div>
+
+<div *ngIf="error">
+  Failed to load the course.
+</div>
+
+<!-- {{ error | json}} -->
