@@ -12,6 +12,8 @@ import { ForBusinessComponent } from './for-business/for-business.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CourseDetailsPageComponent } from './course-details-page/course-details-page.component';
 import { InstructorCardComponent } from './instructor-card/instructor-card.component';
+import { AddInstructorPageComponent } from './add-instructor-page/add-instructor-page.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,12 +25,14 @@ import { InstructorCardComponent } from './instructor-card/instructor-card.compo
     InstructorsPageComponent,
     ForBusinessComponent,
     CourseDetailsPageComponent,
-    InstructorCardComponent
+    InstructorCardComponent,
+    AddInstructorPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

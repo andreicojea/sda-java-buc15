@@ -1,0 +1,19 @@
+<!-- <input type="text" [formControl]="testFormControl" />
+<input type="text" [formControl]="testFormControl2" /> -->
+
+<div [formGroup]="form">
+  <input type="text" formControlName="name" />
+  <input type="text" formControlName="topics" />
+</div>
+
+
+<p>
+  <strong>Current value:</strong> {{ form.value | json }}
+</p>
+<p>
+  <strong>Valid:</strong> {{ form.valid }}
+</p>
+<p>
+  <strong>Errors:</strong> {{ form.errors | json}}
+</p>
+<button [disabled]="form.invalid">Save</button>
