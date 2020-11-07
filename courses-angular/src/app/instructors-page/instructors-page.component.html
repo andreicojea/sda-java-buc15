@@ -1,1 +1,4 @@
-<p>instructors-page works!</p>
+<h2>Instructors</h2>
+<div class="instructor-list">
+  <app-instructor-card *ngFor="let ins of instructors" [instructor]="ins"></app-instructor-card>
+</div>

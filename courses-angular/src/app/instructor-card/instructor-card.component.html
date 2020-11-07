@@ -1,0 +1,6 @@
+<img [src]="instructor.picture" alt="">
+<div>
+  <div>{{ instructor.name }}</div>
+  <div>{{ instructor.topics }}</div>
+  <div *ngIf="instructor.rating >= 4.6">Best teacher award</div>
+</div>

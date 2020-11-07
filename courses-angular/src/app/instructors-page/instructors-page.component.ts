@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { InstructorDataService } from '../instructor-data.service';
+import { Instructor } from '../types/instructor';
 
 @Component({
   selector: 'app-instructors-page',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InstructorsPageComponent implements OnInit {
 
-  constructor() { }
+  instructors: Instructor[] = [];
+
+  constructor(private instructorDataService: InstructorDataService) { }
 
   ngOnInit(): void {
+    this.loadAll();
+  }
+
+  loadAll() {
+    this.instructorDataService.getAll().subscribe(response => {
+      this.instructors = response;
+    });
   }
 
 }

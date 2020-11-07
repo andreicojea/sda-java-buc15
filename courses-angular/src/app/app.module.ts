@@ -11,6 +11,7 @@ import { InstructorsPageComponent } from './instructors-page/instructors-page.co
 import { ForBusinessComponent } from './for-business/for-business.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CourseDetailsPageComponent } from './course-details-page/course-details-page.component';
+import { InstructorCardComponent } from './instructor-card/instructor-card.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { CourseDetailsPageComponent } from './course-details-page/course-details
     HomePageComponent,
     InstructorsPageComponent,
     ForBusinessComponent,
-    CourseDetailsPageComponent
+    CourseDetailsPageComponent,
+    InstructorCardComponent
   ],
   imports: [
     BrowserModule,
