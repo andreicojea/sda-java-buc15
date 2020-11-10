@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { InstructorDataService } from '../instructor-data.service';
+import { Instructor } from '../types/instructor';
 
 @Component({
   selector: 'app-add-instructor-page',
@@ -20,13 +23,33 @@ export class AddInstructorPageComponent implements OnInit {
   // "courses": 10
 
   form = new FormGroup({
-    name: new FormControl(),
-    topics: new FormControl()
+    name: new FormControl('', Validators.required),
+    topics: new FormControl(''),
+    picture: new FormControl('')
   });
 
-  constructor() { }
+  constructor(
+    private instructorDataService: InstructorDataService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  save() {
+    const newInstructor: Instructor = {
+      id: null,
+      name: this.form.value.name,
+      topics: this.form.value.topics,
+      picture: this.form.value.picture,
+      rating: null,
+      courses: 0,
+      students: 0
+    };
+    this.instructorDataService.save(newInstructor).subscribe(() => {
+      alert('Instructor saved.');
+      this.router.navigateByUrl('/instructors');
+    });
   }
 
 }

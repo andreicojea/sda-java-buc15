@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AddInstructorPageComponent } from './add-instructor-page/add-instructor-page.component';
+import { BusinessPageComponent } from './business-page/business-page.component';
 import { CourseDetailsPageComponent } from './course-details-page/course-details-page.component';
 import { CoursesPageComponent } from './courses-page/courses-page.component';
-import { ForBusinessComponent } from './for-business/for-business.component';
+import { EditInstructorPageComponent } from './edit-instructor-page/edit-instructor-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { InstructorsPageComponent } from './instructors-page/instructors-page.component';
 
@@ -35,8 +36,12 @@ const routes: Routes = [
     component: AddInstructorPageComponent
   },
   {
+    path: 'instructors/:id',
+    component: EditInstructorPageComponent
+  },
+  {
     path: 'for-business',
-    component: ForBusinessComponent
+    component: BusinessPageComponent
   }
 ];
 

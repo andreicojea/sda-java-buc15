@@ -1,9 +1,24 @@
 <!-- <input type="text" [formControl]="testFormControl" />
 <input type="text" [formControl]="testFormControl2" /> -->
 
+<h2>Add instructor</h2>
+
 <div [formGroup]="form">
-  <input type="text" formControlName="name" />
-  <input type="text" formControlName="topics" />
+  <div>
+    <label for="instructor-name">Name</label>
+    <input id="instructor-name" type="text" formControlName="name" />
+  </div>
+  <div>
+    <label>Topics</label>
+    <input type="text" formControlName="topics" />
+  </div>
+  <div>
+    <label>Picture</label>
+    <input type="text" formControlName="picture" />
+  </div>
+  <div>
+
+  </div>
 </div>
 
 
@@ -14,6 +29,6 @@
   <strong>Valid:</strong> {{ form.valid }}
 </p>
 <p>
-  <strong>Errors:</strong> {{ form.errors | json}}
+  <strong>Errors:</strong> {{ form.controls.name.errors | json}}
 </p>
-<button [disabled]="form.invalid">Save</button>
+<button [disabled]="form.invalid" (click)="save()">Save</button>

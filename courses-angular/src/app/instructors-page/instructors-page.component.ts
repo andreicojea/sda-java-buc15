@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { InstructorDataService } from '../instructor-data.service';
 import { Instructor } from '../types/instructor';
 
@@ -11,7 +12,10 @@ export class InstructorsPageComponent implements OnInit {
 
   instructors: Instructor[] = [];
 
-  constructor(private instructorDataService: InstructorDataService) { }
+  constructor(
+    private instructorDataService: InstructorDataService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     this.loadAll();
@@ -21,6 +25,22 @@ export class InstructorsPageComponent implements OnInit {
     this.instructorDataService.getAll().subscribe(response => {
       this.instructors = response;
     });
+  }
+
+  goToEdit(instructor: Instructor) {
+    // console.log('Edit', instructor);
+    this.router.navigateByUrl(`/instructors/${instructor.id}`);
+  }
+
+  deleteInstructor(instructor: Instructor) {
+    // console.log('Delete', instructor);
+    const ok = confirm(`Are you sure you want to delete ${instructor.name}?`);
+
+    if (ok) {
+      this.instructorDataService.delete(instructor).subscribe(() => {
+        this.loadAll();
+      });
+    }
   }
 
 }

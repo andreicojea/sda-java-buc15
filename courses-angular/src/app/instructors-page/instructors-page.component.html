@@ -3,5 +3,5 @@
   <button routerLink="/instructors/add">Add Instructor</button>
 </h2>
 <div class="instructor-list">
-  <app-instructor-card *ngFor="let ins of instructors" [instructor]="ins"></app-instructor-card>
+  <app-instructor-card *ngFor="let ins of instructors" [instructor]="ins" (onEdit)="goToEdit($event)" (onDelete)="deleteInstructor($event)"></app-instructor-card>
 </div>

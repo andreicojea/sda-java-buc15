@@ -3,4 +3,8 @@
   <div>{{ instructor.name }}</div>
   <div>{{ instructor.topics }}</div>
   <div *ngIf="instructor.rating >= 4.6">Best teacher award</div>
+  <div>
+    <button (click)="onEdit.emit(this.instructor)">Edit</button>
+    <button (click)="onDelete.emit(this.instructor)">Delete</button>
+  </div>
 </div>

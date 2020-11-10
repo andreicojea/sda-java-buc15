@@ -8,12 +8,14 @@ import { CourseCardComponent } from './course-card/course-card.component';
 import { CoursesPageComponent } from './courses-page/courses-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { InstructorsPageComponent } from './instructors-page/instructors-page.component';
-import { ForBusinessComponent } from './for-business/for-business.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CourseDetailsPageComponent } from './course-details-page/course-details-page.component';
 import { InstructorCardComponent } from './instructor-card/instructor-card.component';
 import { AddInstructorPageComponent } from './add-instructor-page/add-instructor-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { EditInstructorPageComponent } from './edit-instructor-page/edit-instructor-page.component';
+import { BusinessPageComponent } from './business-page/business-page.component';
+import { PlusMinusComponent } from './plus-minus/plus-minus.component';
 
 @NgModule({
   declarations: [
@@ -23,10 +25,12 @@ import { ReactiveFormsModule } from '@angular/forms';
     CoursesPageComponent,
     HomePageComponent,
     InstructorsPageComponent,
-    ForBusinessComponent,
+    BusinessPageComponent,
     CourseDetailsPageComponent,
     InstructorCardComponent,
-    AddInstructorPageComponent
+    AddInstructorPageComponent,
+    EditInstructorPageComponent,
+    PlusMinusComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,31 @@
+<h2>Edit instructor</h2>
+
+<div [formGroup]="editForm">
+  <div>
+    <label>Name</label>
+    <input type="text" formControlName="name" />
+  </div>
+  <div>
+    <label>Topics</label>
+    <input type="text" formControlName="topics" />
+  </div>
+  <div>
+    <label>Picture</label>
+    <input type="text" formControlName="picture" />
+  </div>
+  <div>
+    <label>Rating</label>
+    <input type="number" formControlName="rating" />
+  </div>
+  <div>
+    <label>Students</label>
+    <input type="number" formControlName="students" />
+  </div>
+  <div>
+    <label>Courses</label>
+    <input type="number" formControlName="courses" />
+  </div>
+
+</div>
+
+<button [disabled]="editForm.invalid" (click)="update()">Save</button>
